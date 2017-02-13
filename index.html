@@ -4,16 +4,21 @@
         <meta charset="UTF8" />
         <meta name="author" content="Teemu Teekkari" />
         <meta name="description" content="A simple webpage lorem..." />
-        <title>Ferrari &#10084;</title>
+        <title>Hiili 2030</title>
+        <link rel ="shortcut icon"
+              href = "favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:900" rel="stylesheet">
     </head>
     <body>
-        <nav>
+        <nav class="navigation">
             <ul>
-                <li><a href="#first">Home</a></li>
-                <li><a href="#">Portfolio</a></li>
+                <li><a href="#first">HOME</a></li>
+                <li><a href="#">INFO</a></li>
+                <li><a href="https://www.helen.fi/">HELEN</a></li>
                 <li>
                     <details close>
-                    <summary>Posts</summary>
+                    <summary>POSTS</summary>
                         <ul>
                             <li><a href="#first">First post</a></li>
                             <li><a href="#second">Second post</a></li>
@@ -24,30 +29,34 @@
         </nav>
         <header>
             <h1>Tervetuloa :-)</h1>
-            <img src="http://papunet.net/sites/papunet.net/files/kuvapankki/koira2_0.jpg">
+            <img  src="forest.jpg" width=100%;>
         </header>
         <section>
-            <article id="first">
+            <article id="first" class="blog-post">
                 <h2>My first blog</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tellus odio, tempor in massa efficitur, venenatis tempor ex. Phasellus feugiat vestibulum elit, a molestie ipsum fringilla sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam elementum urna ac odio posuere vestibulum. Donec gravida, nulla eu commodo fermentum, odio lacus ullamcorper nulla, et sodales lorem urna vel ligula. Quisque sed pharetra enim. In eget mi velit. Fusce sit amet consectetur nibh, et volutpat diam. Nam enim nisl, pharetra et tortor sed, facilisis varius libero. Mauris euismod feugiat condimentum. Suspendisse congue, tortor sit amet imperdiet lacinia, purus nibh consequat ligula, et bibendum magna justo vel odio. Sed nec dictum enim. Quisque feugiat dolor eu leo malesuada dictum. Proin dignissim eu lectus quis aliquam.</p>
-                <img src="http://static.iltalehti.fi/fiidifi/fiidipmarsu1206JJ_fd.jpg" alt="Could not load picture" width="500px">
+                    <p>Hallitus suunnittelee kivihiilen käytön kieltämistä lailla vuoteen 2030 mennessä. Tätä perustellaan hallitusohjelmalla ja ympäristötavoitteilla, mutta kuitenkin hallitus suunnittelee korvaavansa kivihiiltä turpeella, joka on kivihiiltä saastuttavampi vaihtoehto.
+                        Kivihiilen käyttö vähenee jatkuvasti, kun samaan aikaan uusiutuvat energiamuodot kehittyvät. On hyödyllisempää investoida uusiin innovaatioihin ja uusiutuvien energiamuotojen kehittämiseen, kuin vaihtaa edullinen ja vakaa kivihiili suot tuhoavaan turpeeseen.</p>
+                <img class="resize" src="s%C3%A4hk%C3%B6tolppa.jpg" alt="Could not load picture" width="500px">
             </article>
-            <article id="second">
+            <article id="second" class="blog-post">
                 <h2>My second blog</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tellus odio, tempor in massa efficitur, venenatis tempor ex. Phasellus feugiat vestibulum elit, a molestie ipsum fringilla sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam elementum urna ac odio posuere vestibulum. Donec gravida, nulla eu commodo fermentum, odio lacus ullamcorper nulla, et sodales lorem urna vel ligula.</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/MSxMskBxyB8" frameborder="0" allowfullscreen></iframe>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/x2RJN9a_jdM" frameborder="0" allowfullscreen></iframe>
+                </div>
             </article>
         </section>
-        <aside>
-            <article>
-                <h3>Most read posts:</h3>
-                <li><a href="#">My third blog post</a></li>
-                <li>Hipster lipsum</li>
-                <li>Hapsun hipsun</li>
-            </article>
-        </aside>
-        <footer>
-            <p>Copyright 2017 by Teemu Teekkari</p>
+        <footer class="bottom">
+            <p>Copyright 2017 by Silkendalen</p>
+            <a href="https://www.instagram.com/energiahelen/">
+                <img src="insta.png">
+            </a>
+            <a href="https://fi-fi.facebook.com/energiahelen/">
+                <img src="face.png">
+            </a>
+            <a href="https://twitter.com/energiahelen">
+                <img src=twitter.png>
+            </a>
         </footer>
     </body>
 </html>
