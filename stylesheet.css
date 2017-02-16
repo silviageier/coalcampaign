@@ -1,5 +1,24 @@
 body {
-    background-color: #d6e6d6;
+    background-color: #d0d6cd;
+    margin: 0px;
+}
+
+header {
+    background: url(Finnish_forest_Fotor.jpg) no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    margin: 0px;
+    
+}
+
+#header h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.5em;
+    color: #fff;
+    text-shadow: 3px 3px 3px  #000;
+    z-index: 999;
+    padding: 50px;
     margin: 0px;
 }
 
@@ -7,36 +26,36 @@ body {
 
 .navigation {
     font-family: 'Roboto', sans-serif;
-    background-color: dimgray;
+    background-color: #fff;
     text-align: left;
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
     left: 0px;
     right: 0px;
-    margin: 0px;
     z-index: 999;
+    border-style: solid;
+    border-width: 3px 0px 3px 0px;
+    border-color: #6f786a;
 }
 
 .navigation li{
-    padding-top: 10px;
-    padding-bottom: 10px;
     display: inline-block;
-    margin-right: 50px;
+    margin-right: 20px;
 }
 
 .navigation ul {
-    height: 50px;
+    height: 30px;
 }
 
 .navigation a {
     text-decoration: none;
-    color: #fff;
+    color: #c7c7c7;
     font-size: 1.5em;
 }
 
 .navigation a:hover {
-    color: black; 
+    color: #000; 
     
 }
 
@@ -47,14 +66,13 @@ li.dropdown {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: dimgray;
+    background-color: #fff;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 .dropdown-content a {
-    color: white;
+    color: #c7c7c7;
     font-size: 1em;
     padding: 15px;
     text-decoration: none;
@@ -71,6 +89,10 @@ li.dropdown {
     display: block;
 }
 
+.now a{
+  color: #6f786a;  
+}
+
 .blog-post {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
@@ -78,12 +100,8 @@ li.dropdown {
     margin: 0 auto;
     margin-top: 30px;
     text-align: center;
-    background-color: whitesmoke;
+    background-color: #fff;
     padding: 20px;
-
-    border-radius: 0px;
-    
-    
 }
 
 .blog-post h2 {
@@ -137,7 +155,7 @@ li.dropdown {
 
 @media screen and (max-width: 500px) {
     .blog-post {
-        width: 100%;
+        width: 95%;
     }
 }
 
