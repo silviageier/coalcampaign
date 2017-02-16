@@ -3,7 +3,7 @@ body {
     margin: 0px;
 }
 
-.header {
+header {
     background: url(Finnish_forest_Fotor.jpg) no-repeat center bottom fixed;
     background-size: cover;
     width: 100%;
@@ -12,7 +12,7 @@ body {
     
 }
 
-.header h1{
+header h1{
     font-family: 'Roboto', sans-serif;
     font-size: 3.5em;
     color: #fff;
@@ -51,7 +51,7 @@ body {
     height: 30px;
 }
 
-.dropdown-content a {
+.navigation a {
     text-decoration: none;
     color: #c7c7c7;
     font-size: 1.5em;
@@ -63,7 +63,7 @@ body {
     
 }
 
-.now a{
+.now a {
   color: #6f786a;  
 }
 
@@ -79,7 +79,6 @@ body {
 }
 
 .blog-post h2 {
-   transition: 1s;
     font-size: 2em;
 }
 
@@ -109,19 +108,25 @@ body {
     height: 100%;
 }
 
-.bottom {
+footer {
+    font-family: 'Roboto', sans-serif;
     width: 100%;
     height: 50px;
     background-color: dimgray;
     text-align: center;
+    margin: 0px;
 }
 
-.bottom p {
+footer p {
     text-align: center;
     padding: 15px;  
 }
 
-.bottom img {
+footer a {
+    display: inline-block;
+}
+
+footer img {
     width: 50px;
     height: 50px;
     padding: 15px;
@@ -135,7 +140,7 @@ body {
     display: inline-block;
 }
 .dropdown {
-    display: inline-block;
+    display: block;
     height: 70px;
 }
 .dropdown-content {
@@ -168,45 +173,18 @@ body {
 }
 
 @media screen and (max-device-width: 550px) {
-#menu {
-    font-size: 2em;
-    color: #c7c7c7;
-    padding: 15px;
-    display: inline-block;
+    header h1{
+        font-size: 6em;
+    }
+    .blog-post {
+        font-size: 3em;
+        width: 95%;
+    }
+    .blog-post h2 {
+        font-size: 4em;
+    }
 }
-.dropdown {
-    display: inline-block;
-    height: 70px;
-}
-.dropdown-content {
-    display: none;
-    position:relative;
-    top: -25px;
-    left: -40px;
-    background-color: #fff;
-    min-width: 100px;
-    z-index: 1;
-    border-style: solid;
-    border-width: 0px 0px 3px 0px;
-    border-color: #6f786a;   
-}
-.dropdown-content a {
-    color: #c7c7c7;
-    font-size: 1em;
-    padding: 20px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-.dropdown-content a:hover {
-    color: black;
-}
-.dropdown:hover .dropdown-content {
-    display: inline-block;
-} 
-.blog-post {width: 95%;}
-}
-}
+
 
 
 
