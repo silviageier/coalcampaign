@@ -159,6 +159,11 @@ li.dropdown {
     }
 }
 
+@media screen and (max-device-width: 500px) {
+    .blog-post {
+        width: 95%;
+    }
+}
 
 
 
