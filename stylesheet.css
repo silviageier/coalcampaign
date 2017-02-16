@@ -3,7 +3,7 @@ body {
     margin: 0px;
 }
 
-header {
+.header {
     background: url(Finnish_forest_Fotor.jpg) no-repeat center center fixed;
     background-size: cover;
     width: 100%;
@@ -12,7 +12,7 @@ header {
     
 }
 
-#header h1{
+.header h1{
     font-family: 'Roboto', sans-serif;
     font-size: 3.5em;
     color: #fff;
