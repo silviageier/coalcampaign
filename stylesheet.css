@@ -162,6 +162,18 @@ footer img {
     padding: 15px;
 }
 
+
+@media screen and (max-device-width: 550px) {
+    .navigation {
+        height: 240px;
+    }
+    .navigation a {
+        font-size: 5em;
+    }
+}
+
+
+
 @media screen and (max-width: 550px) {
 #menu {
     font-size: 2em;
@@ -209,19 +221,12 @@ footer img {
 footer a {
     display: block;
 }
-    footer img {
-            padding: 5px;
-    }
+footer img {
+    padding: 5px;
+}
 }
 
 
-@media screen and (max-device-width: 550px) {
-    .navigation {
-        height: 240px;
-    }
-    .navigation a {
-        font-size: 5em;
-    } 
 
 @viewport {
     zoom: 1.0;
