@@ -10,23 +10,31 @@
               href = "favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,900" rel="stylesheet">
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+            x.className = "topnav";
+                }
+            }
+        </script>
     </head>
     <body>
         <header>
             <h1>HIILEN AIKA ON NYT</h1>
         </header>
-            <nav class="navigation">
-            <li class="dropdown">
-            <a id="menu" href="#">MENU</a>
-            <ul>
-                <div class="dropdown-content">
+            <nav>
+            <ul class="topnav" id="myTopnav">
                     <li class="now"><a href="index.html">ETUSIVU</a></li>
                     <li><a href="news.html">UUTISET</a></li>
                     <li><a href="info.html">INFO</a></li>
                     <li><a href="contact.html">YHTEYSTIEDOT</a></li>
-                </div>
+                    <li class="icon">
+                        <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+                    </li>
             </ul>
-            </li>
         </nav>
         <section>
             <article id="first" class="blog-post">

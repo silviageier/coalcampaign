@@ -22,48 +22,51 @@ header h1{
     margin: 0px;
 }
 
-#menu {
-    display:none;
+
+
+.topnav {
+    background-color: #fff;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 3px 0px 3px 0px;
+    border-color: #6f786a;
 }
 
 
+.topnav li {
+    display: inline-block;
+}
 
-.navigation {
-    background-color: #fff;
-    text-align: left;
+
+.topnav li a {
+    text-decoration: none;
+    display: inline-block;
+    color: #c7c7c7;
+    padding: 15px 15px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+nav li a:hover {color: #000}
+
+.topnav li.icon {display: none;}
+
+
+
+nav {
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
     left: 0px;
     right: 0px;
     z-index: 999;
-    border-style: solid;
-    border-width: 3px 0px 3px 0px;
-    border-color: #6f786a;
-}
-
-.navigation li{
-    display: inline-block;
-}
-
-.navigation ul {
-    height: 30px;
-}
-
-.navigation a {
-    text-decoration: none;
-    color: #c7c7c7;
-    font-size: 1.5em;
-    font-weight: 600;
-    padding: 0px 10px 0px 10px;
-}
-
-.navigation a:hover {
-    color: #000; 
-    
 }
 
 .now a {
+font-size: 1em;
   color: #6f786a;  
 }
 
@@ -163,54 +166,15 @@ footer img {
 }
 
 
-@media screen and (max-device-width: 550px) {
-    .navigation {
-        height: 240px;
-    }
-    .navigation a {
-        font-size: 5em;
-    }
-}
 
 
 
 @media screen and (max-width: 550px) {
-#menu {
-    font-size: 2em;
-    color: #c7c7c7;
-    padding: 15px;
+ul.topnav li:not(:first-child) {display: none;}
+ul.topnav li.icon {
+    float: right;
     display: inline-block;
-}
-.dropdown {
-    display: block;
-    height: 70px;
-}
-.dropdown-content {
-    display: none;
-    position:relative;
-    top: -25px;
-    left: -40px;
-    background-color: #fff;
-    width: 120%;
-    z-index: 1;
-    border-style: solid;
-    border-width: 0px 0px 3px 0px;
-    border-color: #6f786a;   
-}
-.dropdown-content a {
-    color: #c7c7c7;
-    font-size: 1em;
-    padding: 20px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-.dropdown-content a:hover {
-    color: black;
-}
-.dropdown:hover .dropdown-content {
-    display: inline-block;
-} 
+  }
 .now a {
   color: #6f786a;  
 }    
@@ -224,6 +188,23 @@ footer a {
 footer img {
     padding: 5px;
 }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
 }
 
 
