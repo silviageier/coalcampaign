@@ -209,8 +209,11 @@ footer img {
 
 @media screen and (max-device-width: 550px) {
     .navigation {
-        height: 120px;
+        height: 240px;
     }
+    .navigation a {
+        font-size: 6em;
+    } 
     header h1{
         font-size: 6em;
     }
