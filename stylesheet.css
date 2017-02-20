@@ -214,10 +214,21 @@ footer a {
     }
 }
 
+
+@media screen and (max-device-width: 550px) {
+    .navigation {
+        height: 240px;
+    }
+    .navigation a {
+        font-size: 5em;
+    } 
+
 @viewport {
     zoom: 1.0;
     width: extend-to-zoom;
 }
+
+
 
 
 
