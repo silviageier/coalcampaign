@@ -55,7 +55,6 @@ nav li a:hover {color: #000}
 .topnav li.icon {display: none;}
 
 
-
 nav {
     position: -webkit-sticky;
     position: sticky;
@@ -65,8 +64,7 @@ nav {
     z-index: 999;
 }
 
-.now a {
-font-size: 1em;
+.topnav li.now a {
   color: #6f786a;  
 }
 
@@ -118,10 +116,23 @@ font-size: 1em;
 .newspic {
     width: 60%;
     max-width: 300px;
-    height: auto;
-    
+    height: auto; 
 }
 
+.contact {
+    width: 100%;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 3px 0px 3px 0px;
+    border-color: #6f786a;
+    margin: 20px 0px 20px 0px;
+}
+
+.contact p {
+    text-align: center;
+    padding: 15px;
+    
+}
 
 
 
@@ -149,6 +160,7 @@ footer {
 }
 
 footer p {
+    color: #000;
     font-weight: 600;
     text-align: center;
     padding: 15px; 
