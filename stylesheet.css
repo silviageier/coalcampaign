@@ -12,7 +12,6 @@ header {
     margin: 0px;  
 }
 
-
 header h1{
     font-size: 3.5em;
     color: #fff;
@@ -35,11 +34,9 @@ header h1{
     border-color: #6f786a;
 }
 
-
 .topnav li {
     display: inline-block;
 }
-
 
 .topnav li a {
     text-decoration: none;
@@ -50,10 +47,9 @@ header h1{
     font-weight: 600;
 }
 
-nav li a:hover {color: #000}
-
-.topnav li.icon {display: none;}
-
+.topnav li.icon {
+    display: none;
+}
 
 nav {
     position: -webkit-sticky;
@@ -64,9 +60,15 @@ nav {
     z-index: 999;
 }
 
+nav li a:hover {
+    color: #000
+}
+
 .topnav li.now a {
   color: #6f786a;  
 }
+
+
 
 .blog-post {
     font-size: 1.2em;
@@ -104,6 +106,8 @@ nav {
     max-width: 450px;
 }
 
+
+
 .news {
     text-align: left;
     font-size: 1.2em;
@@ -119,6 +123,8 @@ nav {
     height: auto; 
 }
 
+
+
 .contact {
     width: 100%;
     background-color: #fff;
@@ -131,8 +137,7 @@ nav {
 .contact p {
     text-align: center;
     padding: 15px;
-    color: #000;
-    
+    color: #000;   
 }
 
 
@@ -153,14 +158,13 @@ nav {
 
 }
 
+
+
 footer {
     width: 100%;
     background-color: dimgray;
     text-align: center;
     margin: 0px;
-    border-width: 3px 0px 0px 0px;
-    border-style: solid;
-    border-color: #fff;
 }
 
 footer p {
@@ -192,39 +196,30 @@ footer img {
 
 
 
+
 @media screen and (max-width: 680px) {
 ul.topnav li:not(:first-child) {display: none;}
 ul.topnav li.icon {
     float: right;
-    display: inline-block;
-  }
-.now a {
-  color: #6f786a;  
-}    
+    display: inline-block;}
+.now a {color: #6f786a;}    
 .blog-post {width: 90%;}
 .news {
     margin: 10px 0px 10px 0px;
     width:90%;}
-footer a {
-    display: block;
-}
-footer img {
-    padding: 5px;
-}
-  ul.topnav.responsive {position: relative;}
-  ul.topnav.responsive li.icon {
+footer a {display: block;}
+footer img {padding: 5px;}
+ul.topnav.responsive {position: relative;}
+ul.topnav.responsive li.icon {
     position: absolute;
     right: 0;
-    top: 0;
-  }
-  ul.topnav.responsive li {
+    top: 0;}
+ul.topnav.responsive li {
     float: none;
-    display: inline;
-  }
-  ul.topnav.responsive li a {
+    display: inline;}
+ul.topnav.responsive li a {
     display: block;
-    text-align: left;
-  }
+    text-align: left;}
 }
 
 
