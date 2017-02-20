@@ -124,13 +124,14 @@ nav {
     background-color: #fff;
     border-style: solid;
     border-width: 3px 0px 3px 0px;
-    border-color: #6f786a;
+    border-color: #c7c7c7;;
     margin: 20px 0px 20px 0px;
 }
 
 .contact p {
     text-align: center;
     padding: 15px;
+    color: #000;
     
 }
 
@@ -157,14 +158,24 @@ footer {
     background-color: dimgray;
     text-align: center;
     margin: 0px;
+    border-width: 3px 0px 0px 0px;
+    border-style: solid;
+    border-color: #fff;
 }
 
 footer p {
     color: #000;
-    font-weight: 600;
+    font-size: 1.2em;
     text-align: center;
     padding: 15px; 
     margin: 0px;
+}
+
+footer p a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    font-size: 1.2em;
 }
 
 footer a {
