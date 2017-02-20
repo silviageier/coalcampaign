@@ -203,6 +203,9 @@ footer img {
 .news {
     margin: 10px 0px 10px 0px;
     width:90%;}
+footer a {
+    display: block;
+}
 }
 
 
@@ -212,7 +215,7 @@ footer img {
         height: 240px;
     }
     .navigation a {
-        font-size: 5.5em;
+        font-size: 5em;
     } 
     header h1{
         font-size: 6em;
@@ -226,6 +229,9 @@ footer img {
     }
     .blog-post h2 {
         font-size: 4em;
+    }
+    footer a {
+        display: block;
     }
 }
 
