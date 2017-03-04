@@ -8,8 +8,12 @@
         <title>Uutiset</title>
         <link rel ="shortcut icon"
               href = "favicon.ico"/>
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,600,900" rel="stylesheet">
+        <script src="https://use.fontawesome.com/fb9f11110a.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+        <script src="slideshow.js"></script>
         <script>
             function myFunction() {
                 var x = document.getElementById("myTopnav");
@@ -37,14 +41,19 @@
             </ul>
         </nav>
         <section>
-            <article class="news">
-                <h1>UUTINEN 1</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta neque at mi elementum, sed eleifend ipsum vehicula. Vestibulum eleifend vel nibh ac ultrices. Pellentesque id blandit dui. Donec cursus malesuada pellentesque. Proin tristique tellus vitae mi finibus, in venenatis lectus imperdiet.<br /><br /><img class="newspic" src="power_plant.png">
-            </article>
-            <article class="news">
-                <h1>UUTINEN 2</h1>
-                <p>In pharetra iaculis metus, id sodales dui. Aliquam erat volutpat. Nunc sodales pretium neque, sed tincidunt dui finibus eget. In hac habitasse platea dictumst. Duis aliquam metus lectus, eget tristique nulla egestas nec. Vestibulum vitae tellus magna.</p>
-            </article>
+            <div class="news">
+                <div id="newsArticle">
+                    <div id="controlPanel">
+                        <div><button type="button" id="previous"><i class="fa fa-hand-o-left" aria-hidden="true"></i></button></div>
+                        <div><button type="button" id="playpause"><i class="fa fa-pause" aria-hidden="true"></i></button></div>
+                        <div><button type="button" id="next"><i class="fa fa-hand-o-right" aria-hidden="true"></i></button></div>
+                    </div>
+                    <h1></h1>
+                    <div id="newsHeadline"></div>
+                    <div id="newsContent"></div>
+                    <div id="newsDate"></div>
+                </div>
+            </div>
         </section>
         <footer>
             <p>Copyright 2017 by Silvia Geier<br />"HELEN" Oy<br />0445150910<br /><a href="https://www.helen.fi">HELEN</a><br /><br />HELEN Sosiaalisessa mediassa: </p>
@@ -59,4 +68,16 @@
             </a>
         </footer>
     </body>
+    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCIJ8CyGmLbDMRHVMopJsf2ClOpAYcvjwY",
+    authDomain: "geiers1-afbab.firebaseapp.com",
+    databaseURL: "https://geiers1-afbab.firebaseio.com",
+    storageBucket: "geiers1-afbab.appspot.com",
+    messagingSenderId: "178844403919"
+  };
+  firebase.initializeApp(config);
+</script>
 </html>

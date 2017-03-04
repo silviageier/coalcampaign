@@ -109,7 +109,7 @@ nav li a:hover {
 
 
 .news {
-    text-align: left;
+    text-align: center;
     font-size: 1.2em;
     width: 70%;
     margin: 40px 0px 20px 40px;
@@ -117,10 +117,59 @@ nav li a:hover {
     background-color: #fff;
 }
 
-.newspic {
-    width: 60%;
-    max-width: 300px;
-    height: auto; 
+.news h1 {
+    text-align: left;
+    font-size: 1.5em;
+}
+
+#newsArticle {
+    background-image: no-repeat center bottom fixed;
+}
+
+#newsHeadline {
+    text-align: left;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding: 10px;
+}
+
+#newsDate {
+    padding: 10px;
+    font-weight: 600;
+}
+
+#newsContent {
+    padding: 0px 15px 0px 15px;
+}
+
+#controlPanel {
+    position: relative;
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+#controlPanel div {
+    display: inline-block;
+    padding: 10px;
+}
+
+#controlPanel div button {
+    border: none;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+#controlPanel div button:hover {
+    transition: 0.6s;
+    background-color: #6f786a;
+    color: #fff;
 }
 
 
