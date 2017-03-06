@@ -17,20 +17,19 @@ $.getJSON("https://geiers1-afbab.firebaseio.com/.json", function (data) {
 });
     
 
-var seuraava = window.setInterval(function(){playSlides()},3000);
+var seuraava = window.setInterval(function(){playSlides()},6000);
     
 
     
+    
 function playSlides() { 
-    console.log(localStorage.clickcount);
     if (localStorage.clickcount < 2) localStorage.clickcount = Number(localStorage.clickcount) + 1;
     else localStorage.clickcount = 0;
-    $("#newsHeadline").html(content.news[localStorage.clickcount].headline);
-    $("#newsContent").html(content.news[localStorage.clickcount].article);
-    $("#newsDate").html(content.news[localStorage.clickcount].date);
-    
+    $("#newsHeadline").hide().html(content.news[localStorage.clickcount].headline).fadeIn(2000);
+    $("#newsContent").hide().html(content.news[localStorage.clickcount].article).fadeIn(2000);
+    $("#newsDate").hide().html(content.news[localStorage.clickcount].date).fadeIn(2000);
     document.getElementById("newsArticle").style.backgroundImage = (content.news[localStorage.clickcount].image);
-    //$("#newsArticle").style.backgroundImage.fadeIn(slow)
+    
 }
     
 
@@ -42,13 +41,13 @@ document.getElementById("next").onclick = function(){next()};
     
 function playpause() {
     if (playing) {
-        clearInterval(seuraava);
         playing = false;
+        clearInterval(seuraava);
         document.getElementById("playpause").innerHTML = "PLAY";
     }
     else {
         playing = true;
-        seuraava = window.setInterval(function(){playSlides()},3000);
+        seuraava = window.setInterval(function(){playSlides()},6000);
         document.getElementById("playpause").innerHTML = "PAUSE";
     }
 }
