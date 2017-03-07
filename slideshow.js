@@ -17,7 +17,7 @@ $.getJSON("https://geiers1-afbab.firebaseio.com/.json", function (data) {
 });
     
 
-var seuraava = window.setInterval(function(){playSlides()},6000);
+var seuraava = window.setInterval(function(){playSlides();},6000);
     
 
     
@@ -35,9 +35,9 @@ function playSlides() {
 
     
     
-document.getElementById("playpause").onclick = function(){playpause()};
-document.getElementById("previous").onclick = function(){previous()};
-document.getElementById("next").onclick = function(){next()};
+document.getElementById("playpause").onclick = function(){playpause();};
+document.getElementById("previous").onclick = function(){previous();};
+document.getElementById("next").onclick = function(){next();};
     
 function playpause() {
     if (playing) {
@@ -47,7 +47,7 @@ function playpause() {
     }
     else {
         playing = true;
-        seuraava = window.setInterval(function(){playSlides()},6000);
+        seuraava = window.setInterval(function(){playSlides();},6000);
         document.getElementById("playpause").innerHTML = "PAUSE";
     }
 }
@@ -76,4 +76,4 @@ function previous() {
     
     
     
-}
+};
