@@ -73,12 +73,14 @@ nav li a:hover {
 .blog-post {
     font-size: 1.2em;
     width: 70%;
+    min-width: 800px;
     margin: 0 auto;
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
     background-color: #fff;
     padding: 20px;
+    
 }
 
 .blog-post h2 {
