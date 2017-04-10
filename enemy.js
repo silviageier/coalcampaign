@@ -22,19 +22,28 @@
                 y: randomY,
                 w: 40,
                 h: 40,
-                speed: 4
+                speed: 4,
+                direction: getRandomInteger(0,3)
             };
             enemies.push(enemy)
         }
     }
 
+    
+    function changeDirection() {
+        for (var i in enemies) {
+            enemies[i].direction = getRandomInteger(0,3);
+        }
+    }
 
+    setInterval(function(){changeDirection();},1000);
 
+    
 
     function move() {
+        //var directionIndex = getRandomInteger(0,3)
         $.each(enemies, function(index,enemy){
-                var directionIndex = getRandomInteger(0,3)
-                switch (directionIndex) {
+                switch (enemy.direction) {
                 case 0:
                     enemy.x -= enemy.speed;
                     if (enemy.x < 20) {
