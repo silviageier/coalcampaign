@@ -176,13 +176,13 @@ nav li a:hover {
 
 
 .game {
-    margin: 20px;
+    margin: 10px;
     display: block;
 }
 
 .game button {
-    font-size: 1.5em;
-    padding: 10px;
+    font-size: 1em;
+    padding: 5px;
 }
 
 

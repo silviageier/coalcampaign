@@ -14,6 +14,12 @@ $(document).ready( function () {
         changeSpeed(true)
     }
     
+    document.querySelector("#resetbutton").onclick = function() {
+        reset();
+        enemies.splice(0,8);
+        createEnemy();
+    }
+    
 
     var playerImage = new Image();
     playerImage.src = "https://openclipart.org/image/2400px/svg_to_png/215080/SpriteSheet.png";
