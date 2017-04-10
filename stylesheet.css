@@ -175,6 +175,17 @@ nav li a:hover {
 }
 
 
+.game {
+    margin: 20px;
+    display: block;
+}
+
+.game button {
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+
 
 .contact {
     width: 100%;
