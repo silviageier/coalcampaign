@@ -72,6 +72,7 @@ $(document).ready( function () {
         drawEnemy(context);
         drawPlayer(context);
         coin.render();
+        
     };
     
 

@@ -25,6 +25,7 @@
         player.x = 300;
         player.y = 300;
         player.speed = 4;
+        
     };
 
     
@@ -95,6 +96,7 @@
     
     window.addEventListener('keydown', function(e) {
         keysDown[e.keyCode] = true;
+        event.preventDefault();
     });
     
     window.addEventListener('keyup', function(e) {
