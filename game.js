@@ -114,7 +114,7 @@ function update() {
 
 function collisionHandler (player, alien) {
     aliens.remove(alien);
-    var newY = Math.random() * 10;
+    var newY = Math.random() * 9;
     createAliens(newY);  
     counter += 1;
     console.log(counter);
