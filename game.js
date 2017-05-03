@@ -1,126 +1,141 @@
-var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { create: create, update: update });
+var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create , update: update});
+
+function preload() {
+
+    game.load.image('alien', 'smallcoal.gif');
+    game.load.image('forest','background.jpg');
+    game.load.image('player', 'obama-sprite.png');
+    game.load.image('peat','turve.png');
+ //   game.load.image('blob','blob.gif');
+
+}
+
+var player;
+var aliens;
+var blobs;
+var counter = 0;
+
+function createAliens(y) {
+    var alien = aliens.create(0, 30 + y * 55, 'alien');
+    alien.width = 40;
+    alien.height = 40;
+    alien.checkWorldBounds = true;
+    alien.events.onOutOfBounds.add(alienOut, this);
+    alien.body.velocity.x = 50 + Math.random() * 100;
+}
+
+function createBlobs(y) {
+    var blob = blobs.create(game.width, 50 + y * 140, 'peat');
+    blob.width = 50;
+    blob.height = 50;
+    blob.checkWorldBounds = true;
+    blob.events.onOutOfBounds.add(blobOut, this);
+    blob.body.velocity.x = -100 + Math.random() * -200;
+    
+}
+
 
 function create() {
+    
+    var b = game.add.sprite(0, 0, 'forest');
+    b.height=600;
+    b.width=800;
+    
+    //  We only want world bounds on the left and right
+    game.physics.setBoundsToWorld();
 
-    game.physics.startSystem(Phaser.Physics.ARCADE);
+    player = game.add.sprite(game.width/2, game.height/2, 'player');
+    player.anchor.setTo(0.5, 0.5);
+    player.width = 50;
+    player.height = 50;
+    game.physics.arcade.enable(player);
+    
 
-    game.stage.backgroundColor = '#2d2d2d';
-
-    //  These sprites were created with the Phaser Gen Paint app
-    //  also available in the Phaser Examples repo and on the Phaser site.
-
-    var endData = [
-        '2222'
-    ];
-
-    game.create.texture('endTexture', endData, 1, 1, 1);
-
-    var ratData = [
-        '.D...........',
-        '18...........',
-        '1D...........',
-        '18.....1111..',
-        '1D..111DDEE1.',
-        '1811EEE18E0E1',
-        '.1DEEEEEEEEED',
-        '..1EEEEEE41..',
-        '.11E41E1411..',
-        '1111E1E1E111.',
-        '.1111111111..'
-    ];
-
-    game.create.texture('ratTexture', ratData, 4, 4, 4);
-
-    var dudeData = [
-        '.......3.....',
-        '......333....',
-        '....5343335..',
-        '...332333333.',
-        '..33333333333',
-        '..37773337773',
-        '..38587778583',
-        '..38588888583',
-        '..37888888873',
-        '...333333333.',
-        '.F....5556...',
-        '3E34.6757.6..',
-        '.E.55.666.5..',
-        '......777.5..',
-        '.....6..7....',
-        '.....7..7....'
-    ];
-
-    game.create.texture('phaserDude', dudeData, 4, 4, 0);
-
-    //  Now we've got our textures let's just make some sprites
-
-    var end = game.add.sprite(0, 600-64, 'endTexture');
-    end.width = 800;
-    end.height = 64;
-
-    rats = game.add.physicsGroup();
-
-    var y = 80;
-
-    for (var i = 0; i < 9; i++)
+    aliens = game.add.group();
+    aliens.enableBody = true;
+    aliens.physicsBodyType = Phaser.Physics.ARCADE;
+    
+    blobs = game.add.group();
+    blobs.enableBody = true;
+    blobs.physicsBodyType = Phaser.Physics.ARCADE;
+    
+    for (var y = 0; y < 10; y++)
     {
-        var rat = rats.create(game.world.randomX, y, 'ratTexture');
-        rat.body.velocity.x = game.rnd.between(100, 300);
-        y += 48;
+        createAliens(y);
+    }
+    
+    for (var y = 0; y < 4; y++)
+    {
+        createBlobs(y);
     }
 
-    player = game.add.sprite(400, 32, 'phaserDude');
-    player.anchor.set(0.5);
-
-    game.physics.arcade.enable(player);
-
-    cursors = game.input.keyboard.createCursorKeys();
+   
 
 }
+
+function alienOut(alien) {
+
+    //  Move the alien to the top of the screen again
+    alien.reset(0, alien.y);
+
+    //  And give it a new random velocity
+    alien.body.velocity.x = 50 + Math.random() * 100;
+
+}
+
+function blobOut(blob) {
+    blob.reset(game.width, blob.y)
+    blob.body.velocity.x = -50 + Math.random() * -100;
+}
+
 
 function update() {
-
-    rats.forEach(checkPos, this);
-
-    game.physics.arcade.overlap(player, rats, collisionHandler, null, this);
-
-    player.body.velocity.x = 0;
-    player.body.velocity.y = 0;
-
-    if (cursors.left.isDown)
+    game.physics.arcade.overlap(player, aliens, collisionHandler, null, this);
+    if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
     {
-        player.body.velocity.x = -200;
-        player.scale.x = 1;
+        player.x -= 4;
     }
-    else if (cursors.right.isDown)
+    else if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
     {
-        player.body.velocity.x = 200;
-        player.scale.x = -1;
+        player.x += 4;
     }
 
-    if (cursors.up.isDown)
+    if (game.input.keyboard.isDown(Phaser.Keyboard.UP))
     {
-        player.body.velocity.y = -200;
+        player.y -= 4;
     }
-    else if (cursors.down.isDown)
+    else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN))
     {
-        player.body.velocity.y = 200;
+        player.y += 4;
     }
 
 }
 
-function checkPos (rat) {
 
-    if (rat.x > 800)
-    {
-        rat.x = -100;
-    }
-
-}
-
-function collisionHandler (player, rat) {
-
-    player.x = 400;
-    player.y = 32;
+function collisionHandler (player, alien) {
+    aliens.remove(alien);
+    var newY = Math.random() * 10;
+    createAliens(newY);  
+    counter += 1;
+    console.log(counter);
+//    player.x = 750;
+  //  player.y = 300;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
