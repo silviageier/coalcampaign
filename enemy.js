@@ -36,7 +36,7 @@
         }
     }
 
-    setInterval(function(){changeDirection();},700);
+    setInterval(function(){changeDirection();},400);
 
     
 
