@@ -48,42 +48,29 @@ var music;
 
 create: function() {
     
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+    
 function createAliens(y) {
-    var alien = aliens.create(0, 30 + y * 55, 'alien');
+    var alien = aliens.create((game.width-40)*Math.random()+40, Math.random() * game.height, 'alien');
     alien.width = 40;
     alien.height = 40;
     alien.checkWorldBounds = true;
-    alien.events.onOutOfBounds.add(alienOut, this);
-    alien.body.velocity.x = 50 + Math.random() * 100;
 }
     
 
 function createBlobs(y) {
-    var blob = blobs.create(game.width, 50 + y * 140, 'peat');
+    var blob = blobs.create((game.width-25) * Math.random() + 25, y * Math.random(), 'peat');
     blob.width = 50;
     blob.height = 50;
     blob.checkWorldBounds = true;
-    blob.events.onOutOfBounds.add(blobOut, this);
     blob.body.velocity.x = -100 + Math.random() * -200;
+    blob.body.velocity.y = Math.random() * -200;
+    game.physics.enable(blob, Phaser.Physics.ARCADE);
+    blob.body.collideWorldBounds = true;
+    blob.body.bounce.setTo(1, 1);
     
 }
-    
-function alienOut(alien) {
-
-    //  Move the alien to the top of the screen again
-    alien.reset(0, alien.y);
-
-    //  And give it a new random velocity
-    alien.body.velocity.x = 50 + Math.random() * 100;
-
-}
-
-function blobOut(blob) {
-    blobSpeed -= 10;
-    blob.reset(game.width, blob.y)
-    blob.body.velocity.x = blobSpeed + Math.random() * -100;
-}
-    
+        
     var b = game.add.sprite(0, 0, 'forest');
     b.height=600;
     b.width=800;
@@ -99,17 +86,20 @@ function blobOut(blob) {
     player.width = 50;
     player.height = 50;
     game.physics.arcade.enable(player);
+    player.body.collideWorldBounds = true;
     
 
     aliens = game.add.group();
     aliens.enableBody = true;
     aliens.physicsBodyType = Phaser.Physics.ARCADE;
+
     
     blobs = game.add.group();
     blobs.enableBody = true;
     blobs.physicsBodyType = Phaser.Physics.ARCADE;
     
-    for (var y = 0; y < 10; y++)
+    
+    for (var y = 0; y < 4; y++)
     {
         createAliens(y);
     }
@@ -125,47 +115,33 @@ function blobOut(blob) {
 
 update: function() {
 
-    
-function alienOut(alien) {
 
-    //  Move the alien to the top of the screen again
-    alien.reset(0, alien.y);
-
-    //  And give it a new random velocity
-    alien.body.velocity.x = 50 + Math.random() * 100;
-
-}
-
-function blobOut(blob) {
-    blobSpeed -= 10;
-    blob.reset(game.width, blob.y)
-    blob.body.velocity.x = blobSpeed + Math.random() * -100;
-}
 
     
 function createAliens(y) {
-    var alien = aliens.create(0, 30 + y * 55, 'alien');
+    var alien = aliens.create((game.width-40)*Math.random(), Math.random() * game.height, 'alien');
     alien.width = 40;
     alien.height = 40;
     alien.checkWorldBounds = true;
-    alien.events.onOutOfBounds.add(alienOut, this);
-    alien.body.velocity.x = 50 + Math.random() * 100;
 }
     
 
 function createBlobs(y) {
-    var blob = blobs.create(game.width, 50 + y * 140, 'peat');
+    var blob = blobs.create((game.width-25) * Math.random() + 25, y * Math.random(), 'peat');
     blob.width = 50;
     blob.height = 50;
     blob.checkWorldBounds = true;
-    blob.events.onOutOfBounds.add(blobOut, this);
     blob.body.velocity.x = -100 + Math.random() * -200;
+    blob.body.velocity.y = Math.random() * -200;
+    game.physics.enable(blob, Phaser.Physics.ARCADE);
+    blob.body.collideWorldBounds = true;
+    blob.body.bounce.setTo(1, 1);
     
 }
-
+    
 function collisionHandler(player, alien) {
     aliens.remove(alien);
-    var newY = Math.random() * 9;
+    var newY = Math.random() * 3;
     createAliens(newY);  
     counter += 1;
     console.log(counter);
