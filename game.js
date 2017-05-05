@@ -79,6 +79,8 @@ function createBlobs(y) {
     game.physics.setBoundsToWorld();
     
     music = game.add.audio('backgroundmusic');
+    coalSound = game.add.audio('coal');
+    loseSound = game.add.audio('sad');
     music.play();
 
     player = game.add.sprite(game.width/2, game.height/2, 'player');
@@ -145,10 +147,12 @@ function collisionHandler(player, alien) {
     createAliens(newY);  
     counter += 1;
     console.log(counter);
+    coalSound.play();
 }
 
 function blobCollision(player, blob) {
     console.log("MOIII");
+    loseSound.play();
     //this.game.start("GameOver")
 }
     game.physics.arcade.overlap(player, aliens, collisionHandler, null, this);
