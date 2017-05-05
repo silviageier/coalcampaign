@@ -201,8 +201,8 @@ function blobCollision(player, blob) {
 
 
 
-    game.state.add('gam',theGame);
-    game.state.start('gam');
+    game.state.add('game',theGame);
+    game.state.start('game');
 
 
 
