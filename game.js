@@ -2,11 +2,12 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: p
 
 function preload() {
 
-    game.load.image('alien', 'smallcoal.gif');
-    game.load.image('forest','background.jpg');
-    game.load.image('player', 'obama-sprite.png');
-    game.load.image('peat','turve.png');
- //   game.load.image('blob','blob.gif');
+    game.load.image('alien', 'assets/smallcoal.gif');
+    game.load.image('forest','assets/background.jpg');
+    game.load.image('player', 'assets/obama-sprite.png');
+    game.load.image('peat','assets/turve.png');
+ //   game.load.image('blob','assets/blob.gif');
+    game.load.audio('backgroundmusic', ['assets/gamemusic.mp3', 'assets/gamemusic.ogg']);
 
 }
 
@@ -14,6 +15,7 @@ var player;
 var aliens;
 var blobs;
 var counter = 0;
+var music;
 
 function createAliens(y) {
     var alien = aliens.create(0, 30 + y * 55, 'alien');
@@ -43,6 +45,9 @@ function create() {
     
     //  We only want world bounds on the left and right
     game.physics.setBoundsToWorld();
+    
+    music = game.add.audio('backgroundmusic');
+    music.play();
 
     player = game.add.sprite(game.width/2, game.height/2, 'player');
     player.anchor.setTo(0.5, 0.5);
@@ -69,7 +74,7 @@ function create() {
         createBlobs(y);
     }
 
-   
+  
 
 }
 
@@ -122,6 +127,8 @@ function collisionHandler (player, alien) {
   //  player.y = 300;
 
 }
+
+
 
 
 
