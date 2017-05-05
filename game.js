@@ -11,6 +11,8 @@ function preload() {
 
 }
 
+var blobSpeed = -40;
+
 var player;
 var aliens;
 var blobs;
@@ -89,13 +91,15 @@ function alienOut(alien) {
 }
 
 function blobOut(blob) {
+    blobSpeed -= 10;
     blob.reset(game.width, blob.y)
-    blob.body.velocity.x = -50 + Math.random() * -100;
+    blob.body.velocity.x = blobSpeed + Math.random() * -100;
 }
 
 
 function update() {
     game.physics.arcade.overlap(player, aliens, collisionHandler, null, this);
+    game.physics.arcade.overlap(player, blobs, blobCollision, null, this);
     if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
     {
         player.x -= 4;
@@ -123,9 +127,10 @@ function collisionHandler (player, alien) {
     createAliens(newY);  
     counter += 1;
     console.log(counter);
-//    player.x = 750;
-  //  player.y = 300;
+}
 
+function blobCollision (player, blob) {
+    console.log("MOIII");
 }
 
 
