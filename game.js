@@ -3,7 +3,10 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: p
 */
 
 
-var game = new Phaser.Game(800, 600, Phaser.AUTO,'game');
+//var game = new Phaser.Game(800, 600, Phaser.AUTO,'game');
+
+//var game = new Phaser.Game(800, 600, Phaser.CANVAS, "game");
+        //        var game = new Phaser.Game(800, 600, Phaser.AUTO,'game');
 
 var counter = 0;
 var blobSpeed = -40;
@@ -21,7 +24,7 @@ var music;
 //theGame.Play = {};
 
 theGame.prototype = {
-preload: function() {
+/*preload: function() {
 
     game.load.image('alien', 'assets/smallcoal.gif');
     game.load.image('forest','assets/background.jpg');
@@ -31,6 +34,7 @@ preload: function() {
     game.load.audio('backgroundmusic', ['assets/gamemusic.mp3', 'assets/gamemusic.ogg']);
 
 },
+*/
 /*
 
 
@@ -201,8 +205,8 @@ function blobCollision(player, blob) {
 
 
 
-    game.state.add('game',theGame);
-    game.state.start('game');
+//    game.state.add('game',theGame);
+  //  game.state.start('game');
 
 
 
