@@ -81,7 +81,7 @@ function createBlobs(y) {
     music = game.add.audio('backgroundmusic');
     coalSound = game.add.audio('coal');
     loseSound = game.add.audio('sad');
-    music.play();
+    music.loopFull();
 
     player = game.add.sprite(game.width/2, game.height/2, 'player');
     player.anchor.setTo(0.5, 0.5);
