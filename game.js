@@ -1,6 +1,27 @@
+/*
 var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create , update: update});
+*/
 
-function preload() {
+
+var game = new Phaser.Game(800, 600, Phaser.AUTO,'game');
+
+var counter = 0;
+var blobSpeed = -40;
+
+var theGame = function() {
+   
+
+var player;
+var aliens;
+var blobs;
+
+var music;
+
+};
+//theGame.Play = {};
+
+theGame.prototype = {
+preload: function() {
 
     game.load.image('alien', 'assets/smallcoal.gif');
     game.load.image('forest','assets/background.jpg');
@@ -9,16 +30,20 @@ function preload() {
  //   game.load.image('blob','assets/blob.gif');
     game.load.audio('backgroundmusic', ['assets/gamemusic.mp3', 'assets/gamemusic.ogg']);
 
-}
+},
+/*
 
-var blobSpeed = -40;
 
 var player;
 var aliens;
 var blobs;
 var counter = 0;
 var music;
+*/
 
+
+create: function() {
+    
 function createAliens(y) {
     var alien = aliens.create(0, 30 + y * 55, 'alien');
     alien.width = 40;
@@ -27,6 +52,7 @@ function createAliens(y) {
     alien.events.onOutOfBounds.add(alienOut, this);
     alien.body.velocity.x = 50 + Math.random() * 100;
 }
+    
 
 function createBlobs(y) {
     var blob = blobs.create(game.width, 50 + y * 140, 'peat');
@@ -37,9 +63,22 @@ function createBlobs(y) {
     blob.body.velocity.x = -100 + Math.random() * -200;
     
 }
+    
+function alienOut(alien) {
 
+    //  Move the alien to the top of the screen again
+    alien.reset(0, alien.y);
 
-function create() {
+    //  And give it a new random velocity
+    alien.body.velocity.x = 50 + Math.random() * 100;
+
+}
+
+function blobOut(blob) {
+    blobSpeed -= 10;
+    blob.reset(game.width, blob.y)
+    blob.body.velocity.x = blobSpeed + Math.random() * -100;
+}
     
     var b = game.add.sprite(0, 0, 'forest');
     b.height=600;
@@ -78,8 +117,11 @@ function create() {
 
   
 
-}
+},
 
+update: function() {
+
+    
 function alienOut(alien) {
 
     //  Move the alien to the top of the screen again
@@ -96,8 +138,39 @@ function blobOut(blob) {
     blob.body.velocity.x = blobSpeed + Math.random() * -100;
 }
 
+    
+function createAliens(y) {
+    var alien = aliens.create(0, 30 + y * 55, 'alien');
+    alien.width = 40;
+    alien.height = 40;
+    alien.checkWorldBounds = true;
+    alien.events.onOutOfBounds.add(alienOut, this);
+    alien.body.velocity.x = 50 + Math.random() * 100;
+}
+    
 
-function update() {
+function createBlobs(y) {
+    var blob = blobs.create(game.width, 50 + y * 140, 'peat');
+    blob.width = 50;
+    blob.height = 50;
+    blob.checkWorldBounds = true;
+    blob.events.onOutOfBounds.add(blobOut, this);
+    blob.body.velocity.x = -100 + Math.random() * -200;
+    
+}
+
+function collisionHandler(player, alien) {
+    aliens.remove(alien);
+    var newY = Math.random() * 9;
+    createAliens(newY);  
+    counter += 1;
+    console.log(counter);
+}
+
+function blobCollision(player, blob) {
+    console.log("MOIII");
+    //this.game.start("GameOver")
+}
     game.physics.arcade.overlap(player, aliens, collisionHandler, null, this);
     game.physics.arcade.overlap(player, blobs, blobCollision, null, this);
     if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
@@ -118,27 +191,18 @@ function update() {
         player.y += 4;
     }
 
-}
+},
 
 
-function collisionHandler (player, alien) {
-    aliens.remove(alien);
-    var newY = Math.random() * 9;
-    createAliens(newY);  
-    counter += 1;
-    console.log(counter);
-}
+};
 
-function blobCollision (player, blob) {
-    console.log("MOIII");
-}
+
+            
 
 
 
-
-
-
-
+    game.state.add('gam',theGame);
+    game.state.start('gam');
 
 
 
