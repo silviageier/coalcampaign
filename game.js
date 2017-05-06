@@ -132,8 +132,8 @@ function fasterBlobs() {
 */
     
     blobs.forEach(function(item) {
-        item.body.velocity.x = 1.0005*item.body.velocity.x;
-        item.body.velocity.y = 1.0005*item.body.velocity.y;
+        item.body.velocity.x = 1.0002*item.body.velocity.x;
+        item.body.velocity.y = 1.0002*item.body.velocity.y;
     });
     
 function createAliens(y) {
