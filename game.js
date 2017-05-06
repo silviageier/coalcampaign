@@ -118,9 +118,23 @@ function createBlobs(y) {
 },
 
 update: function() {
+  /*  
+game.world.forEach(function() {
+    
+});
+ */   
 
-
-
+    
+/*
+function fasterBlobs() {
+    
+}
+*/
+    
+    blobs.forEach(function(item) {
+        item.body.velocity.x = 1.0005*item.body.velocity.x;
+        item.body.velocity.y = 1.0005*item.body.velocity.y;
+    });
     
 function createAliens(y) {
     var alien = aliens.create((game.width-40)*Math.random(), Math.random() * game.height, 'alien');
