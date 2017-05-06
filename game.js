@@ -10,6 +10,8 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: p
 
 var score = 0;
 var scoreText;
+var livesLeft = 3;
+var livesText;
 var blobSpeed = -40;
 
 var theGame = function() {
@@ -65,7 +67,7 @@ function createBlobs(y) {
     blob.width = 50;
     blob.height = 50;
     blob.checkWorldBounds = true;
-    blob.body.velocity.x = -100 + Math.random() * -200;
+    blob.body.velocity.x = -200 + Math.random() * -100;
     blob.body.velocity.y = Math.random() * -200;
     game.physics.enable(blob, Phaser.Physics.ARCADE);
     blob.body.collideWorldBounds = true;
@@ -76,6 +78,7 @@ function createBlobs(y) {
     b.height=600;
     b.width=800;
     scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+    livesText = game.add.text(216, 16, 'lives: 3', { fontSize: '32px', fill: '#000' });
     
     //  We only want world bounds on the left and right
     game.physics.setBoundsToWorld();
@@ -157,7 +160,14 @@ function collisionHandler(player, alien) {
 
 function blobCollision(player, blob) {
     console.log("MOIII");
-    loseSound.play();
+    livesLeft -= 1;
+    //loseSound.play();
+    if (livesLeft == 0) {
+        loseSound.play();
+    }
+    else {
+        livesText.text = 'Lives: ' + livesLeft;
+    }
     //this.game.start("GameOver")
 }
     game.physics.arcade.overlap(player, aliens, collisionHandler, null, this);
