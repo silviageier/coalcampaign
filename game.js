@@ -8,7 +8,8 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: p
 //var game = new Phaser.Game(800, 600, Phaser.CANVAS, "game");
         //        var game = new Phaser.Game(800, 600, Phaser.AUTO,'game');
 
-var counter = 0;
+var score = 0;
+var scoreText;
 var blobSpeed = -40;
 
 var theGame = function() {
@@ -50,6 +51,7 @@ create: function() {
     
     game.physics.startSystem(Phaser.Physics.ARCADE);
     
+    
 function createAliens(y) {
     var alien = aliens.create((game.width-40)*Math.random()+40, Math.random() * game.height, 'alien');
     alien.width = 40;
@@ -67,13 +69,13 @@ function createBlobs(y) {
     blob.body.velocity.y = Math.random() * -200;
     game.physics.enable(blob, Phaser.Physics.ARCADE);
     blob.body.collideWorldBounds = true;
-    blob.body.bounce.setTo(1, 1);
-    
+    blob.body.bounce.setTo(1, 1);  
 }
         
     var b = game.add.sprite(0, 0, 'forest');
     b.height=600;
     b.width=800;
+    scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
     
     //  We only want world bounds on the left and right
     game.physics.setBoundsToWorld();
@@ -128,26 +130,15 @@ function createAliens(y) {
 }
     
 
-function createBlobs(y) {
-    var blob = blobs.create((game.width-25) * Math.random() + 25, y * Math.random(), 'peat');
-    blob.width = 50;
-    blob.height = 50;
-    blob.checkWorldBounds = true;
-    blob.body.velocity.x = -100 + Math.random() * -200;
-    blob.body.velocity.y = Math.random() * -200;
-    game.physics.enable(blob, Phaser.Physics.ARCADE);
-    blob.body.collideWorldBounds = true;
-    blob.body.bounce.setTo(1, 1);
-    
-}
     
 function collisionHandler(player, alien) {
     aliens.remove(alien);
     var newY = Math.random() * 3;
     createAliens(newY);  
-    counter += 1;
-    console.log(counter);
+    console.log(score);
     coalSound.play();
+    score += 1;
+    scoreText.text = 'Score: ' + score;
 }
 
 function blobCollision(player, blob) {
