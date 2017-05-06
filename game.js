@@ -16,7 +16,7 @@ var blobSpeed = -40;
 
 var theGame = function() {
    
-
+var colliding = false;
 var player;
 var aliens;
 var blobs;
