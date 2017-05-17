@@ -15,7 +15,7 @@ $.getJSON("https://geiers1-afbab.firebaseio.com/.json", function (data) {
     $("#newsDate").html(content.news[localStorage.clickcount].date); 
     document.getElementById("newsArticle").style.backgroundImage = (content.news[localStorage.clickcount].image);
 });
-    
+  
 
 var seuraava = window.setInterval(function(){playSlides();},6000);
     
@@ -47,7 +47,7 @@ function playpause() {
     }
     else {
         playing = true;
-        seuraava = window.setInterval(function(){playSlides();},6000);
+        seuraava = window.setInterval(function(){playSlides();},10000);
         document.getElementById("playpause").innerHTML = "PAUSE";
     }
 }

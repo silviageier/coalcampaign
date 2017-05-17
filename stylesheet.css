@@ -72,42 +72,55 @@ nav li a:hover {
 
 .blog-post {
     font-size: 1.2em;
-    width: 70%;
-    min-width: 800px;
+    width: 100%;
+    min-width: 600px;
     margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
     text-align: center;
     background-color: #fff;
-    padding: 20px;
     
 }
 
-.blog-post h2 {
-    font-size: 2em;
-}
-
-.blog-post h2:hover {
-    transition: 1s;
-    font-size: 3em;
+.blog-post h1 {
+    font-size: 1.4em;
+    font-weight: 300;
+    padding-top: 20px;
 }
 
 .blog-post p{
-    font-weight:100;
+    font-weight:300;
+}
+
+#infotext p{
+    padding: 0px 30px 20px 30px;
+}
+
+#alantoimijoille p{
+    padding: 0px 30px 20px 30px;
+}
+
+#video {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.indextext {
+    font-size: 1.2em;
+    font-weight: 900;
+    padding: 30px;
 }
 
 .resize {
-    width: 90%;
-    max-width: 400px;
+    width: 80%;
+    max-width: 200px;
     height: auto;
 }
 
-.resize:hover {
-    transition: 1s;
-    width:95%;
-    max-width: 450px;
+#contactText {
+    text-align: left;
+    padding: 20px 50px 20px 50px;
+    font-weight: 300;
+    background-color: #e6e6e6;
 }
-
 
 
 .news {
