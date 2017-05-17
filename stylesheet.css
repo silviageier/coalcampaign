@@ -123,6 +123,11 @@ nav li a:hover {
     background-color: #e6e6e6;
 }
 
+#people p{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
 .kapeat {
     width: 100px;
     height: 50px;
